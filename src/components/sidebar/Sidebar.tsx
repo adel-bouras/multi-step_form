@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import mobilebg from "@/../public/bg-sidebar-mobile.svg";
 import desktopbg from "@/../public/bg-sidebar-desktop.svg";
 import { useEffect, useState } from "react";
@@ -13,7 +12,7 @@ function Step(prop: { index: number; isActive: boolean; text: string }) {
           prop.isActive
             ? "text-Marine_blue bg-Pastel_blue"
             : "bg-transparent text-Light_blue"
-        } `}
+        }`}
       >
         {prop.index}
       </div>
