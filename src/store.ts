@@ -35,6 +35,12 @@ interface Price {
   setPrice: (value: number) => void;
 }
 
+interface Service {
+  services: string[];
+  setService: (value: string) => void;
+  removeService: (value: string) => void;
+}
+
 const useStep = create<Step>((set) => ({
   step: 1,
   setStep: (value) => set({ step: value }),
@@ -73,5 +79,26 @@ const usePrice = create<Price>((set) => ({
     }),
 }));
 
-export { useStep, usePrice, useEmail, useName, usePhone, usePlan, useBill };
+const useServices = create<Service>((set) => ({
+  services: [],
+  setService: (value: string) =>
+    set((state) => ({
+      services: [...state.services, value],
+    })),
+  removeService: (value: string) =>
+    set((state) => ({
+      services: state.services.filter((v) => v !== value),
+    })),
+}));
+
+export {
+  useStep,
+  usePrice,
+  useEmail,
+  useName,
+  usePhone,
+  usePlan,
+  useBill,
+  useServices,
+};
 export type { Name, Email, Phone, Price };
