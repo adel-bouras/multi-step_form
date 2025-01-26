@@ -32,6 +32,7 @@ Users should be able to:
 ### Screenshot
 
 ![screen](./screenshot.png)
+![screen](./lighthous.png)
 
 ### Links
 
